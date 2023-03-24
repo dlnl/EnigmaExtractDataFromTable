@@ -3,6 +3,25 @@ const schema = require('enigma.js/schemas/12.20.0.json');
 const WebSocket = require('ws');
 const fs = require('fs');
 require('dotenv').config();
+
+/* 
+For this demo all sensitive information has been stored in a .env file.
+The contents of this .env file are used/read by 'require('dotenv').config()', see row #5.
+To keep this script working create a file and rename it to '.env'
+Write the following:
+
+APPID=[APPID_OF_APP]
+URL=[SERVER ADDRESS]
+TABLEOBJECTID=[OBJECT ID OF THE TABLE]
+
+In this QS Desktop Demo I've used the following:
+
+APPID=C:\\Users\\XYZ\\Documents\\Qlik\\Sense\\Apps\\Apex Global Operations - DRT Final.qvf
+URL=ws://localhost:9076/app/engineData
+TABLEOBJECTID=jKFVSU
+
+*/
+
 const config = {
   schema,
   appId: process.env.APPID, //replace with your appId, as this was tested on QS Desktop it currently has a direct path.
